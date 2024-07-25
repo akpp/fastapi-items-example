@@ -1,0 +1,33 @@
+services:
+  web:
+    build: .
+    container_name: fastapi_items
+    environment:
+      FASTAPI_ENV: development
+      CHANGE_ME_TO_REBUILD_IMAGE: hello
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    volumes:
+      - .:/code
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /code
+  db:
+    image: mysql:8.0
+    container_name: fastapi_items_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: fastapi_items
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

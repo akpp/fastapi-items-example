@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM python:3.8.19-slim
 
 # create new dir and use it as workdir
 WORKDIR /code
@@ -9,12 +9,13 @@ COPY ./requirements.txt /code/requirements.txt
 
 
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+#RUN pip install -r requirements.txt
 
  # --no-cache-dir - not save the packages locally, will make image smaller
 # --upgrade - install the certain version from the file
 
 # put this near the end, to optimize the container image build times
- COPY .env.docker_version /code/.env
+COPY .env.docker_version /code/.env
 COPY ./api /code/api
 
 CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]

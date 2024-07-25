@@ -30,6 +30,15 @@ pip install \
     pytest
 ```
 
+## Run via Docker Compose
+
+
+### Run db service only
+```shell
+$ sudo docker compose up db --build
+```
+
+
 ## Manual Installation via Shell
 ### Create a virtual environment
 ```bash
