@@ -1,6 +1,3 @@
-"""
-doc url: https://fastapi.tiangolo.com/advanced/settings/
-"""
 
 from pydantic import BaseSettings
 
