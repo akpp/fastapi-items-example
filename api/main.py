@@ -10,7 +10,7 @@ app = FastAPI()
 
 @app.get("/")
 def hello():
-    return "Hello, Items!123"
+    return "Hello, Items!"
 
 
 app.include_router(items.router)

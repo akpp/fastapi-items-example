@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="FastAPI-items-venv" type="Python.FastAPI">
+  <configuration default="false" name="FastAPI-Items-Venv" type="Python.FastAPI">
     <option name="file" value="$PROJECT_DIR$/api/main.py" />
     <module name="fastapi-items-example" />
     <option name="ENV_FILES" value="" />
