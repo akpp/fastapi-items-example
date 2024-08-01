@@ -1,5 +1,9 @@
 
 ## Run app via Docker
+
+TODO: Debugger [FastAPI-Items-Docker](.run/FastApi-Items-Docker.run.xml) doesn't work!
+
+
 ### Run web server
 ```shell
 uvicorn api.main:app --reload
