@@ -1,14 +1,5 @@
 
-## Run app manually (via shell)
-### Run web server
-```shell
-uvicorn api.main:app --reload
-```
-
-### Create the network
-```
-docker network create fastapi-items-example
-```
+## Run app via shell
 
 
 ### Run MySQL container: Option 1
@@ -40,22 +31,8 @@ docker compose up db -d
 docker compose down db
 ```
 
-### Run the App
-Build an image
-```shell
-docker build -t fastapi-items-example .
-```
 
+### Run web server
 ```shell
-docker run --rm \
-    --name fastapi-items-example-web \
-    --network fastapi-items-example \
-    -e MYSQL_HOST=db \
-    -p 8000:8000 \
-    fastapi-items-example
-```
-
-#### Stop container
-```shell
-docker stop fastapi-items-example-web
+uvicorn api.main:app --reload
 ```
