@@ -1,20 +1,27 @@
 
-## Run app manually
+## Run app manually (via shell)
 ### Run web server
 ```shell
 uvicorn api.main:app --reload
 ```
 
-### Run MySQL container
+### Create the network
+```
+docker network create fastapi-items-example
+```
+
+
+### Run MySQL container: Option 1
 ```shell
 docker run --rm -d \
+    --name fastapi-items-example-db \
     -p 3306:3306 \
     -v fastapi-items-example_db_data:/var/lib/mysql \
     -e MYSQL_DATABASE=fastapi_items \
     -e MYSQL_ROOT_PASSWORD=rootpassword \
     -e MYSQL_USER=user \
     -e MYSQL_PASSWORD=password \
-    --name fastapi-items-example-db \
+    --network fastapi-items-example --network-alias db \
     mysql:8.0 
 ```
 
@@ -23,7 +30,7 @@ docker run --rm -d \
 docker stop fastapi-items-example-db
 ```
 
-### Run MySQL Docker Compose container
+### Run MySQL Docker Compose container: Option 2
 ```shell
 docker compose up db -d
 ```
@@ -33,3 +40,22 @@ docker compose up db -d
 docker compose down db
 ```
 
+### Run the App
+Build an image
+```shell
+docker build -t fastapi-items-example .
+```
+
+```shell
+docker run --rm \
+    --name fastapi-items-example-web \
+    --network fastapi-items-example \
+    -e MYSQL_HOST=db \
+    -p 8000:8000 \
+    fastapi-items-example
+```
+
+#### Stop container
+```shell
+docker stop fastapi-items-example-web
+```

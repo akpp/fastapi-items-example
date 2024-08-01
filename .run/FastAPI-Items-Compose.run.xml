@@ -1,18 +1,29 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="FastAPI-Items-Venv" type="Python.FastAPI">
+  <configuration default="false" name="FastAPI-Items-Compose" type="Python.FastAPI">
+    <option name="additionalOptions" value="--reload --host 0.0.0.0 --port 8000" />
     <option name="file" value="$PROJECT_DIR$/api/main.py" />
     <module name="fastapi-items-example" />
     <option name="ENV_FILES" value="" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
-    <option name="SDK_HOME" value="$USER_HOME$/.pyenv/versions/fa_items/bin/python" />
-    <option name="SDK_NAME" value="Python 3.8 (fa_items)" />
+    <envs>
+      <env name="PYTHONUNBUFFERED" value="1" />
+    </envs>
+    <option name="SDK_HOME" value="/usr/local/bin/python3" />
+    <option name="SDK_NAME" value="Remote Python 3.8.19 Docker Compose (web)" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     <option name="IS_MODULE_SDK" value="false" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
     <EXTENSION ID="DockerComposeSettingsRunConfigurationExtension" commandLine="up --build" />
     <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+    <PathMappingSettings>
+      <option name="pathMappings">
+        <list>
+          <mapping local-root="." remote-root="/code" />
+        </list>
+      </option>
+    </PathMappingSettings>
     <option name="launchJavascriptDebuger" value="false" />
     <method v="2" />
   </configuration>
