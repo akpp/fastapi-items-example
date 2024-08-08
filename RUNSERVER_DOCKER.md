@@ -1,14 +1,6 @@
 
 ## Run app via Docker
 
-TODO: Debugger [FastAPI-Items-Docker](.run/FastApi-Items-Docker.run.xml) doesn't work!
-
-
-### Run web server
-```shell
-uvicorn api.main:app --reload
-```
-
 ### Create the network
 ```
 docker network create fastapi-items-example
@@ -63,3 +55,6 @@ docker run --rm \
 ```shell
 docker stop fastapi-items-example-web
 ```
+
+
+TODO: PyCharm Debugger [FastAPI-Items-Docker](.run/FastApi-Items-Docker.run.xml) doesn't work!
