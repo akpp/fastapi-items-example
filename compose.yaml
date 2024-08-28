@@ -1,6 +1,7 @@
 services:
   web:
     build: .
+    working_dir: /code
     container_name: fastapi-items-example-web
     environment:
       FASTAPI_ENV: development
@@ -10,7 +11,8 @@ services:
     depends_on:
       - db
     volumes:
-      - ${PWD}/projects/fastapi-items-example/.env.docker_example:/opt/project/.env # overcome PyCharm's restriction
+      - ./api/:/code/api/
+
   db:
     image: mysql:8.0
     container_name: fastapi-items-example-db

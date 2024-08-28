@@ -15,7 +15,7 @@
     <option name="IS_MODULE_SDK" value="false" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
-    <EXTENSION ID="DockerComposeSettingsRunConfigurationExtension" commandLine="up --build" />
+    <EXTENSION ID="DockerComposeSettingsRunConfigurationExtension" commandLine="--file compose-pycharm.yaml up --build" />
     <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
     <PathMappingSettings>
       <option name="pathMappings">
