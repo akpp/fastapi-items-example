@@ -1,6 +1,30 @@
-## Debugging via PyCharm 2024.1
+## Debugging via VSCode 1.91.1
 
-### PyCharm's configuration:
+
+### Configuration [.vscode/launch.json](.vscode/launch.json):
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Remote Attach",
+            "type": "debugpy",
+            "request": "attach",
+            "connect": {
+                "host": "localhost",
+                "port": 5678
+            },
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceFolder}",
+                    "remoteRoot": "."
+                }
+            ]
+        }
+    ]
+}
+```
+
 
 ![plot](./doc/configuration_PyCharm2024.1.png)
 Configuration file: [.run/UvicornServer.run.xml](.run/UvicornServer.run.xml)

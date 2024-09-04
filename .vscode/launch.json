@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python Debugger: Remote Attach",
+            "name": "Python Debugger: Remote Attach (Docker Compose)",
             "type": "debugpy",
             "request": "attach",
             "connect": {
@@ -20,7 +20,7 @@
             ]
         },
         {
-            "name": "Python Debugger: FastAPI",
+            "name": "Python Debugger: FastAPI (shell)",
             "type": "debugpy",
             "request": "launch",
             "module": "uvicorn",

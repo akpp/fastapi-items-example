@@ -8,6 +8,12 @@
 docker compose up --build
 ```
 
+### Run db service [optional]
+```shell
+docker compose up db
+```
+
+
 ### Run Debugger
 Run and Debug or press key: F5
 
